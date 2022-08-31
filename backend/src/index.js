@@ -3,7 +3,7 @@ const express = require("express");
 const connect = require("./config/db");
 const { login, register } = require("./controllers/auth.controller");
 
-const food = require("./controllers/Product.controller");
+const shoe = require("./controllers/Product.controller");
 const cors = require("cors");
 
 const app = express();
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 
-app.use("", food);
+app.use("", shoe);
 app.post("/login", login);
 app.post("/register", register);
 

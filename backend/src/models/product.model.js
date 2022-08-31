@@ -13,6 +13,21 @@ const productSchema = new mongoose.Schema(
     uDate: { type: Date ,required:true},
     description: { type: String },
     rating: { type: Number },
+    reviews: [
+      {
+        name: { type: String, required: true },
+        rating: { type: Number, required: true },
+        comment: { type: String, required: true },
+        review: {
+          type: Schema.Types.ObjectId,
+          required: true,
+          ref: "review",
+        },
+      },
+      {
+        timestamps: true,
+      },
+    ],
   },
   {
     versionKey: false,
